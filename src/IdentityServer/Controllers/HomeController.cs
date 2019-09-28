@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using IdentityServer.Models;
+using IdentityServer.ViewModels;
 
 namespace IdentityServer.Controllers
 {
