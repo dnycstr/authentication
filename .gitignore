@@ -4,3 +4,4 @@
 
 /.vs
 /src/IdentityServer/obj
+/src/IdentityServer/bin/Debug/netcoreapp2.2
