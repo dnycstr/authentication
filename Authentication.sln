@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{20A70C0E-5466-40E2-8AB6-4B3809BD3CB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "src\IdentityServer\IdentityServer.csproj", "{FBC386C8-CD82-43D2-8870-58CFF503BBFD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBC386C8-CD82-43D2-8870-58CFF503BBFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC386C8-CD82-43D2-8870-58CFF503BBFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC386C8-CD82-43D2-8870-58CFF503BBFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC386C8-CD82-43D2-8870-58CFF503BBFD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FBC386C8-CD82-43D2-8870-58CFF503BBFD} = {20A70C0E-5466-40E2-8AB6-4B3809BD3CB5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97D5AC42-8755-4647-9C39-BE1F88DE4402}
+	EndGlobalSection
+EndGlobal
