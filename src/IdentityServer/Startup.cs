@@ -38,10 +38,7 @@ namespace IdentityServer
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            //Register Syncfusion license
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTQ4ODIzQDMxMzcyZTMyMmUzMGlnNTQ1b3E1ZU9DUFUyK3N4Nit1K2NVMk5kYnI4OXJTUUZIT3lMcjZBN009");
-
-
+                       
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
