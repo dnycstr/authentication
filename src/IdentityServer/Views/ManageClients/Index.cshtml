@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<div id="table-control-panel">
+
+</div>
+
+<table id="clients-datatable" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>Client Id</th>
+            <th>Client Name</th>
+            <th>Enabled</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>Client Id</th>
+            <th>Client Name</th>
+            <th>Enabled</th>
+        </tr>
+    </tfoot>
+</table>
+
+
+
+@section Scripts
+    {
+
+    <script>
+
+
+    $(document).ready(function () {
+
+
+        var table = $('#clients-datatable').DataTable({
+            "processing": true,
+            "serverSide": true,
+            "ajax":
+            {
+                "url": "@Url.Action("GetClientsData", "ManageClients")",
+                "type": "POST",
+                "dataType":"JSON"
+            },
+            rowId: "Id",
+            "columns": [
+                {"data": "ClientId"},
+                 { "data": "ClientName" },
+                  { "data": "Enabled" }
+            ]
+        });
+
+        table
+            .buttons()
+            .container()
+            .appendTo('#table-control-panel');
+
+    });
+
+
+    </script>
+
+}
+
