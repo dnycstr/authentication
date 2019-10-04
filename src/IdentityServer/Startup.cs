@@ -18,6 +18,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json.Serialization;
 
 namespace IdentityServer
 {
@@ -53,7 +54,9 @@ namespace IdentityServer
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc()
+                .AddJsonOptions(options =>  options.SerializerSettings.ContractResolver = new DefaultContractResolver())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             
             var builder = services.AddIdentityServer(options =>
             {
@@ -114,7 +117,7 @@ namespace IdentityServer
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            InitializeDatabase(app);
+            //InitializeDatabase(app);
 
             if (env.IsDevelopment())
             {

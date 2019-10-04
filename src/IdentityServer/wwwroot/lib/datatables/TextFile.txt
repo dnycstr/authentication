@@ -1,0 +1,5 @@
+﻿https://datatables.net/download/
+
+Styling Framework: Bootstrap3 v3.3.7
+Packages: Datatables
+Extentions: All

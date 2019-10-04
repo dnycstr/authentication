@@ -16,6 +16,8 @@
         <link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
         <!-- NProgress -->
         <link href="~/lib/nprogress/nprogress.css" rel="stylesheet">
+        <!-- Datatables -->
+        <link href="~/lib/datatables/datatables.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -29,10 +31,10 @@
     <link href="~/css/custom.css" rel="stylesheet" />
 
     <!-- Syncfusion Essential JS 2 Styles -->
-    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/bootstrap.css" />
+    @*<link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/bootstrap.css" />*@
 
     <!-- Syncfusion Essential JS 2 Scripts -->
-    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+    @*<script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>*@
         
     <link rel="stylesheet" href="~/css/site.css" />
 
@@ -44,7 +46,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+                        <a href="/" class="site_title"><i class="fa fa-lock"></i> <span>Auth</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -117,6 +119,8 @@
         <script src="~/lib/fastclick/lib/fastclick.js"></script>
         <!-- NProgress -->
         <script src="~/lib/nprogress/nprogress.js"></script>
+        <!-- Datatables -->
+        <script src="~/lib/datatables/datatables.js"></script>
     </environment>
     <environment exclude="Development">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"
@@ -139,7 +143,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <!-- Syncfusion Essential JS 2 ScriptManager -->
-    <ejs-scripts></ejs-scripts>
+    @*<ejs-scripts></ejs-scripts>*@
 
     @RenderSection("Scripts", required: false)
 
