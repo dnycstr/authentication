@@ -33,3 +33,11 @@ $('#clients-dataTable tbody').on('click', 'tr', function () {
         $(this).addClass('selected');
     }
 });
+
+
+$("#btn-data-reload").on('click',
+    function () {
+
+        table.ajax.reload();
+
+    });

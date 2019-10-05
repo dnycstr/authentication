@@ -12,11 +12,17 @@ namespace IdentityServer.Infrastructure.ViewModels
         
     }
 
-    public class AddClientViewModel : ClientViewModel
+    public class ClientAddViewModel : ClientViewModel
     {
+        public bool IsSuccess { get; set; }
+
+        public string ErrorMessage { get; set; }
     }
 
-    public class EditClientViewModel : ClientViewModel
+    public class ClientEditViewModel : ClientViewModel
     {
+        public bool IsSuccess { get; set; }
+
+        public string ErrorMessage { get; set; }
     }
 }

@@ -1,15 +1,37 @@
 ﻿
-@model Client
+@model ClientAddViewModel
 
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">    
             <div class="x_content" id="add-form-container">
-                     
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        @if ((ViewBag.HttpMethod == "POST") && (ViewData.ModelState.Any(x => x.Value.Errors.Any()) || !Model.IsSuccess))
+                        {
+                            <div class="alert alert-danger">
+                                <a href="#" class="close" data-dismiss="alert">×</a>
+                                <h4>Validation Errors</h4>
+                                @Html.ValidationSummary()
+
+                                @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+                                {
+                                    <span>@Model.ErrorMessage</span>
+                                }
+
+                            </div>
+                        }
+
+                    </div>
+                </div>
+
                 <form asp-controller="ManageClients" asp-action="AddClient"
                       data-ajax="true" data-ajax-method="POST"
-                      data-ajax-mode="replace" data-ajax-update="my-modal-lg-form-container"
+                      data-ajax-mode="replace" data-ajax-update="#my-modal-lg-form-container"
                       class="form-horizontal form-label-left">
+
+                    @Html.AntiForgeryToken()
 
                     <div class="ln_solid"></div>
 
@@ -389,7 +411,7 @@
                             <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                     </div>
-                    
+
                 </form>
 
             </div>
