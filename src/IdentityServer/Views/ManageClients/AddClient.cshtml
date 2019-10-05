@@ -1,0 +1,446 @@
+﻿
+@model Client
+
+@{
+    ViewData["Title"] = "Add Client";
+}
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>Clients</h3>
+    </div>
+    <div class="title_right">
+
+    </div>
+</div>
+<div class="clearfix"></div>
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Add Client</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content" id="add-form-container">
+                     
+                <form asp-controller="ManageClients" asp-action="AddClient"
+                      data-ajax-begin="onBegin" data-ajax-complete="onComplete"
+                      data-ajax-failure="onFailed" data-ajax-success="onSuccess"
+                      data-ajax="true" data-ajax-method="POST" 
+                        data-ajax-mode="replace" data-ajax-update="add-form-container"
+                      class="form-horizontal form-label-left">
+
+                    <div class="form-group">
+                        <label asp-for="ClientId" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Client ID <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="ClientId" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ClientName" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Client Name
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="ClientName" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Description
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="Description" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Enabled" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Enabled
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="Enabled" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RequireClientSecret" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Require Client Secret
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="RequireClientSecret" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RequirePkce" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Require Pkce
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="RequirePkce" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AllowPlainTextPkce" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Allow Plain Text Pkce
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AllowPlainTextPkce" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AllowPlainTextPkce" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Allow Plain Text Pkce
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AllowPlainTextPkce" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label asp-for="AllowOfflineAccess" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Allow Offline Access
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AllowOfflineAccess" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AllowAccessTokensViaBrowser" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Allow Access Tokens Via Browser
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AllowAccessTokensViaBrowser" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ProtocolType" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            ProtocolType
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="ProtocolType" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="ln_solid"></div>
+
+                    <h3>Authentication/Logout</h3>
+
+                    <div class="form-group">
+                        <label asp-for="FrontChannelLogoutUri" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            FrontChannelLogoutUri
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="FrontChannelLogoutUri" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="FrontChannelLogoutSessionRequired" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Front Channel Logout Session Required
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="FrontChannelLogoutSessionRequired" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="BackChannelLogoutUri" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Back Channel LogoutUri
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="BackChannelLogoutUri" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="BackChannelLogoutSessionRequired" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Back Channel Logout Session Required
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="BackChannelLogoutSessionRequired" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="EnableLocalLogin" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Enable Local Login
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="EnableLocalLogin" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UserSsoLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            User Sso Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="UserSsoLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+
+                    <div class="ln_solid"></div>
+
+                    <h3>Token</h3>
+
+
+                    <div class="form-group">
+                        <label asp-for="IdentityTokenLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Identity Token Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="IdentityTokenLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AccessTokenLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Access Token Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="AccessTokenLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AuthorizationCodeLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Authorization Code Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="AuthorizationCodeLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AbsoluteRefreshTokenLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Absolute Refresh Token Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="AbsoluteRefreshTokenLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="SlidingRefreshTokenLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Sliding Refresh Token Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="SlidingRefreshTokenLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RefreshTokenUsage" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Refresh Token Usage (R/O)
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="RefreshTokenUsage" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="RefreshTokenExpiration" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Refresh Token Expiration (A/S)
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="RefreshTokenExpiration" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="UpdateAccessTokenClaimsOnRefresh" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Update Access Token Claims On Refresh
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="UpdateAccessTokenClaimsOnRefresh" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AccessTokenType" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Access Token Type
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="AccessTokenType" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="IncludeJwtId" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Include Jwt Id
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="IncludeJwtId" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AlwaysSendClientClaims" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Always Send Client Claims
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AlwaysSendClientClaims" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AlwaysIncludeUserClaimsInIdToken" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Always Include User Claims In Id Token
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AlwaysIncludeUserClaimsInIdToken" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ClientClaimsPrefix" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Client Claims Prefix
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="ClientClaimsPrefix" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="PairWiseSubjectSalt" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Pair Wise Subject Salt
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="PairWiseSubjectSalt" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+
+
+                    <div class="ln_solid"></div>
+
+                    <h3>Consent Screen</h3>
+
+                    <div class="form-group">
+                        <label asp-for="RequireConsent" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Require Consent
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="RequireConsent" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="AllowRememberConsent" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Allow Remember Consent
+                        </label>
+                        <div class="col-md-1 col-sm-1 col-xs-1">
+                            <input asp-for="AllowRememberConsent" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ConsentLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Consent Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="ConsentLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="ClientUri" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Client Uri
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="ClientUri" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="LogoUri" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Logo Uri
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="LogoUri" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+
+
+                    <div class="ln_solid"></div>
+
+                    <h3>Device Flow</h3>
+
+                    <div class="form-group">
+                        <label asp-for="UserCodeType" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            User Code Type
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="UserCodeType" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DeviceCodeLifetime" class="control-label col-md-3 col-sm-3 col-xs-12">
+                            Device Code Lifetime
+                        </label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <input asp-for="DeviceCodeLifetime" class="form-control col-md-7 col-xs-12">
+                        </div>
+                    </div>
+
+
+                    <div class="ln_solid"></div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                            <button class="btn btn-primary" type="button">Cancel</button>
+                            <button class="btn btn-primary" type="reset">Reset</button>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+           
+        </div>
+    </div>
+</div>
+<div id="Results"></div>
+
+
+
+
+
+@section Scripts
+    {
+    <script type="text/javascript">
+
+        var results = $("#Results");
+
+        var onBegin = function () {
+            results.html("<img src=\"/images/ajax-loader.gif\" alt=\"Loading\" />");
+        };
+
+        var onComplete = function () {
+            results.html("");
+        };
+
+        var onSuccess = function (context) {
+            alert(context);
+        };
+
+        var onFailed = function (context) {
+            alert("Failed");
+        };
+    </script>
+}
+
