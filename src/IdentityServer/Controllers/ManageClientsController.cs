@@ -40,10 +40,12 @@ namespace IdentityServer.Controllers
 
             var totalCount = data.Count();
 
-            data = data.Skip(startRec).Take(pageSize).ToList();
+            // Filtering process code
 
             var filteredCount = data.Count();
 
+            data = data.Skip(startRec).Take(pageSize).ToList();
+                        
             var tdata = new {
                 draw=Convert.ToInt32(draw),
                 recordsTotal = totalCount,

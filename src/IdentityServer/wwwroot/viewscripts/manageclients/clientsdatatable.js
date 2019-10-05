@@ -1,9 +1,10 @@
 ﻿
 var dataurl = $("#dataurl").val();
 
-var table = $('#clients-dataTable').DataTable({
+var table = $('#clients-dataTable').DataTable({   
     "processing": true,
     "serverSide": true,
+    "deferRender": true,
     "ajax":
     {
         "url": dataurl,
