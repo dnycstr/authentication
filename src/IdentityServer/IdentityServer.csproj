@@ -16,4 +16,14 @@
     <PackageReference Include="Syncfusion.EJ2.AspNet.Core" Version="17.2.0.51" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <Folder Include="Data\Entities\" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Include="wwwroot\viewscripts\manageclients\clientsdatatable.js" />
+  </ItemGroup>
+
 </Project>

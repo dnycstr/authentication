@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer.Extensions;
 using IdentityServer.Filters;
 using IdentityServer4.EntityFramework.DbContexts;
+using IdentityServer4.EntityFramework.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IdentityServer.Controllers
 {    
+    //[SecurityHeaders]
     public class ManageClientsController : Controller
     {
         private ConfigurationDbContext _dbcontext;
@@ -53,6 +56,36 @@ namespace IdentityServer.Controllers
             };
 
             return Json(tdata);
+        }
+
+        [HttpGet]
+        public IActionResult AddClient()
+        {
+            var model = new Client();
+            return View(model);
+        }
+
+        [HttpPost]
+        public IActionResult AddClient(Client client)
+        {
+            
+            if (!ModelState.IsValid)
+            {
+                return View(client);
+            }
+
+            //_dbcontext.Clients.Add(client);
+            //_dbcontext.SaveChanges();
+
+            if (!Request.IsAjaxRequest())
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index","ManageClients");
+            }
+
         }
     }
 }
