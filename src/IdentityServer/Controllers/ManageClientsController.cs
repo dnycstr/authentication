@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using IdentityServer.Extensions;
-using IdentityServer.Filters;
+using IdentityServer.Infrastructure.Extensions;
 using IdentityServer4.EntityFramework.DbContexts;
 using IdentityServer4.EntityFramework.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -22,10 +21,6 @@ namespace IdentityServer.Controllers
 
         public IActionResult Index()
         {
-
-            var clients = _dbcontext.Clients.ToList();
-
-            ViewBag.Clients = clients;
 
             return View();
         }
@@ -62,6 +57,12 @@ namespace IdentityServer.Controllers
         public IActionResult AddClient()
         {
             var model = new Client();
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("AddClient", model);
+            }
+
             return View(model);
         }
 
@@ -74,18 +75,25 @@ namespace IdentityServer.Controllers
                 return View(client);
             }
 
-            //_dbcontext.Clients.Add(client);
-            //_dbcontext.SaveChanges();
+            _dbcontext.Clients.Add(client);
+            _dbcontext.SaveChanges();
 
-            if (!Request.IsAjaxRequest())
+            if (Request.IsAjaxRequest())
             {
-                return View();
+                return PartialView("_SuccessAddPartial");
             }
-            else
-            {
-                return RedirectToAction("Index","ManageClients");
-            }
+
+            return RedirectToAction("Index","ManageClients");
 
         }
+          
+        
+        public IActionResult ViewClients()
+        {
+            return View();
+        }
+
+
+
     }
 }

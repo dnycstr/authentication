@@ -1,12 +1,12 @@
 ﻿
-var datatableurl = $("#datatableurl").val();
+var dataurl = $("#dataurl").val();
 
 var table = $('#clients-dataTable').DataTable({
     "processing": true,
     "serverSide": true,
     "ajax":
     {
-        "url": datatableurl,
+        "url": dataurl,
         "type": "POST",
         "dataType": "JSON"
     },

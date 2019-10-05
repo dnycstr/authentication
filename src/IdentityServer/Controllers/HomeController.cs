@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using IdentityServer.Infrastructure.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using IdentityServer.Models;
-using IdentityServer.ViewModels;
 
 namespace IdentityServer.Controllers
 {

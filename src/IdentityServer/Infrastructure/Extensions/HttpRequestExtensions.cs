@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 
-namespace IdentityServer.Extensions
+namespace IdentityServer.Infrastructure.Extensions
 {
     public static class HttpRequestExtensions
     {

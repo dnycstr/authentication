@@ -32,12 +32,12 @@
                                 <i class="fa fa-2x fa-refresh"></i>
                                 <span class="btn-icon-text">refresh</span>
                             </button>
-                            <button class="btn btn-sm btn-outline btn-primary" id="btn-new-entry-view"
+                            <button class="btn btn-sm btn-outline btn-primary" id="btn-new-entry-modal"
                                     data-toggle="tooltip" data-placement="bottom" title="new entry">
                                 <i class="fa fa-2x fa-plus-circle"></i>
                                 <span class="btn-icon-text">&nbsp; new &nbsp;</span>
                             </button>
-                            <button class="btn btn-sm btn-outline btn-warning" id="btn-update-entry-view"
+                            <button class="btn btn-sm btn-outline btn-warning" id="btn-update-entry-modal"
                                     data-toggle="tooltip" data-placement="bottom" title="update entry">
                                 <i class="fa fa-2x fa-edit"></i>
                                 <span class="btn-icon-text">update</span>
@@ -75,7 +75,7 @@
     </div>
 </div>
 
-<input id="datatableurl" type="hidden" value="@Url.Action("GetClientsData", "ManageClients")">
+<input id="dataurl" type="hidden" value="@Url.Action("GetClientsData", "ManageClients")">
 <input id="newentryurl" type="hidden" value="@Url.Action("AddClient", "ManageClients")">
 
 
